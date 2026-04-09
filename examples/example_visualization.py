@@ -31,7 +31,7 @@ OUTPUT_FILE = "eurusd_4h_zones.png"
 
 
 def visualize(pair: str = PAIR, timeframe: str = TIMEFRAME):
-    print(f"\nVisualising {pair} {timeframe} …")
+    print(f"\nVisualizing {pair} {timeframe} …")
 
     # 1. Fetch & process
     fetcher = DataFetcher(pair, timeframe)

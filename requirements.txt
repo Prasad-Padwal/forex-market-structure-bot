@@ -5,7 +5,7 @@ numpy>=1.23.0
 # Forex data source
 yfinance>=0.2.18
 
-# Visualisation
+# Visualization
 matplotlib>=3.6.0
 plotly>=5.13.0
 

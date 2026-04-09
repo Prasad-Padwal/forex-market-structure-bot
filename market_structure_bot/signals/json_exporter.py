@@ -12,7 +12,7 @@ from typing import List, Optional
 
 
 class JsonExporter:
-    """Serialises and exports signal dicts to JSON."""
+    """Serializes and exports signal dicts to JSON."""
 
     def __init__(self, output_dir: str = "signals_output"):
         """

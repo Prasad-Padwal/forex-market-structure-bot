@@ -83,7 +83,7 @@ def action_backtest(pair: str, timeframe: str, period: str = "2y"):
 
 
 def action_visualize(pair: str, timeframe: str, period: str = "6mo", save_path: str = None):
-    log.info("Visualising %s %s …", pair, timeframe)
+    log.info("Visualizing %s %s …", pair, timeframe)
     fetcher = DataFetcher(pair, timeframe)
     raw = fetcher.fetch(period)
     processor = DataProcessor(raw)
