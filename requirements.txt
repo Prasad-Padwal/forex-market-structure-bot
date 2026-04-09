@@ -1,6 +1,16 @@
-pandas
-numpy
-yfinance
-matplotlib
-plotly
-python-dotenv
+# Core data science
+pandas>=1.5.0
+numpy>=1.23.0
+
+# Forex data source
+yfinance>=0.2.18
+
+# Visualization
+matplotlib>=3.6.0
+plotly>=5.13.0
+
+# Configuration helpers
+python-dotenv>=1.0.0
+
+# Optional: interactive charting
+# mplfinance>=0.12.9b7
