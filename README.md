@@ -1,25 +1,24 @@
 # Forex Market Structure Trading Bot
 
-This bot implements various strategies for Forex market structure trading. 
+## Overview
+This bot analyzes forex market structures and provides insightful trading signals.
 
-## Modules:
-- Market Structure Detection
-- 2CR Confirmation
-- CHoH Detection
-- 3-Level Zone Calculation
-- Signal Generation
+## Features
+- Strategy Modules
+- Data Processing
 - Backtesting
 - Visualization
-- Data Fetching
+- Configuration Management
+- Examples
 
-### Installation
-To install the required packages, run:
+## Dependencies
+Install the required packages using the following command:
 ```
 pip install -r requirements.txt
 ```
 
-### Usage
-To run the bot, use the command:
+## Usage
+Run the bot using:
 ```
-python examples.py
+python main.py
 ```
