@@ -122,7 +122,9 @@ class SignalEngine:
             List of signal dicts sorted by entry_priority.
         """
         signals = []
-        sl_distance = atr * 1.5
+        # SL distance uses a 1.5× ATR buffer (matching the default sl_atr_multiplier in Backtester)
+        sl_atr_mult = 1.5
+        sl_distance = atr * sl_atr_mult
 
         for zone_name, zone_data in levels.items():
             if zone_data is None:

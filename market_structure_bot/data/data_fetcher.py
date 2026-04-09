@@ -91,8 +91,16 @@ class DataFetcher:
                 f"interval={self._interval} period={period}."
             )
 
-        # Normalise column names
-        raw.columns = [c.lower() if isinstance(c, str) else c[0].lower() for c in raw.columns]
+        # Normalise column names (yfinance may return str or tuple columns)
+        normalised = []
+        for c in raw.columns:
+            if isinstance(c, str):
+                normalised.append(c.lower())
+            elif isinstance(c, (tuple, list)) and len(c) > 0 and isinstance(c[0], str):
+                normalised.append(c[0].lower())
+            else:
+                normalised.append(str(c).lower())
+        raw.columns = normalised  # type: ignore[assignment]
         # Ensure required columns exist
         for col in ("open", "high", "low", "close"):
             if col not in raw.columns:
@@ -129,7 +137,15 @@ class DataFetcher:
             raise ValueError(
                 f"No data returned for {self.pair} from {start} to {end}."
             )
-        raw.columns = [c.lower() if isinstance(c, str) else c[0].lower() for c in raw.columns]
+        norm2 = []
+        for c in raw.columns:
+            if isinstance(c, str):
+                norm2.append(c.lower())
+            elif isinstance(c, (tuple, list)) and len(c) > 0 and isinstance(c[0], str):
+                norm2.append(c[0].lower())
+            else:
+                norm2.append(str(c).lower())
+        raw.columns = norm2  # type: ignore[assignment]
         for col in ("open", "high", "low", "close"):
             if col not in raw.columns:
                 raise ValueError(f"Missing column '{col}'.")

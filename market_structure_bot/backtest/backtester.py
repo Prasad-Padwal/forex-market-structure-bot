@@ -139,6 +139,9 @@ class Backtester:
         if "atr" not in self.data.columns:
             raise ValueError("Data must have an 'atr' column. Run DataProcessor first.")
 
+        # Start at swing_lookback+2 to ensure:
+        #   - swing_lookback bars of history for MarketStructure
+        #   - +2 so the 2CR check can access candle[i-1] safely
         for i in range(swing_lookback + 2, len(self.data) - 1):
             atr = float(self.data["atr"].iloc[i])
             if atr == 0 or np.isnan(atr):
